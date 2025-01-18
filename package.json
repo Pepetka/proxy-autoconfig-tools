@@ -1,0 +1,14 @@
+{
+  "name": "proxy-autoconfig-tools",
+  "module": "generate.ts",
+  "type": "module",
+  "scripts": {
+    "generate": "bun run generate.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
