@@ -1,13 +1,13 @@
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
 
-const gfwFilePath = join(__dirname, "../gfw.txt");
+const rulesFilePath = join(__dirname, "../rules.txt");
 const aclFilePath = join(__dirname, "../output/proxy.acl");
 const aclTemplatePath = join(__dirname, "../templates/acl.template");
 
 export const generateAcl = async () => {
   try {
-    const data = await readFile(gfwFilePath, "utf-8");
+    const data = await readFile(rulesFilePath, "utf-8");
     const domains = data
       .split("\n")
       .filter((line) => line.trim() !== "")

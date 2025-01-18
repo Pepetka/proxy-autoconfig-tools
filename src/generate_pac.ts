@@ -1,13 +1,13 @@
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
 
-const gfwFilePath = join(__dirname, "../gfw.txt");
+const rulesFilePath = join(__dirname, "../rules.txt");
 const pacFilePath = join(__dirname, "../output/proxy.pac");
 const pacTemplatePath = join(__dirname, "../templates/pac.template");
 
 export const generatePac = async () => {
   try {
-    const data = await readFile(gfwFilePath, "utf-8");
+    const data = await readFile(rulesFilePath, "utf-8");
     const domains = data
       .split("\n")
       .filter((line) => line.trim() !== "")
