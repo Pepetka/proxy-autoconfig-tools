@@ -16,7 +16,7 @@ export const generateAcl = async () => {
     const aclTemplate = await readFile(aclTemplatePath, "utf-8");
     const aclContent = aclTemplate.replace(
       "{{DOMAINS}}",
-      domains.map((d) => `${d}`).join(",\n"),
+      domains.map((d) => `${d}`).join("\n"),
     );
 
     await writeFile(aclFilePath, aclContent, "utf-8");
