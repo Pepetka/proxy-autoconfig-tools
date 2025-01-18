@@ -11,14 +11,12 @@ export const generateAcl = async () => {
     const domains = data
       .split("\n")
       .filter((line) => line.trim() !== "")
-      .map((domain) =>
-        domain.replace(/^\*\./, "(?:^|\\.)").replace(/\./g, "\\."),
-      );
+      .map((domain) => `(?:^|\.)${domain}$`.replace(/\./g, "\\."));
 
     const aclTemplate = await readFile(aclTemplatePath, "utf-8");
     const aclContent = aclTemplate.replace(
       "{{DOMAINS}}",
-      domains.map((d) => `"${d}"`).join(",\n"),
+      domains.map((d) => `${d}`).join(",\n"),
     );
 
     await writeFile(aclFilePath, aclContent, "utf-8");

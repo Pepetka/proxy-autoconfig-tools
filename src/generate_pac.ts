@@ -11,14 +11,12 @@ export const generatePac = async () => {
     const domains = data
       .split("\n")
       .filter((line) => line.trim() !== "")
-      .map((domain) =>
-        domain.replace(/^\*\./, "(?:^|\\.)").replace(/\./g, "\\."),
-      );
+      .map((domain) => (domain.startsWith("*.") ? domain : `*.${domain}`));
 
     const pacTemplate = await readFile(pacTemplatePath, "utf-8");
     const pacContent = pacTemplate.replace(
       "{{DOMAINS}}",
-      domains.map((d) => `"${d}"`).join(",\n"),
+      domains.map((d) => `"${d}"`).join(",\n    "),
     );
 
     await writeFile(pacFilePath, pacContent, "utf-8");
