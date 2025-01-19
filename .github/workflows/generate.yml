@@ -24,18 +24,39 @@ jobs:
       - name: Generate files
         run: bun run generate
 
+      - name: Check for changes in output/
+        id: check_output
+        run: |
+          if ! git diff --cached --quiet; then
+            echo "output_changed=true" >> $GITHUB_ENV
+            echo "Changes in output/"
+          else
+            echo "output_changed=false" >> $GITHUB_ENV
+            echo "No changes in output/"
+          fi
+
       - name: Commit and push changes
+        if: env.output_changed == 'true'
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add output/
-          if ! git diff --cached --quiet; then
-            git commit -m "Auto-generate GFW, PAC and ACL files"
-            git push
+          git commit -m "Auto-generate GFW, PAC and ACL files"
+          git push
+
+      - name: Check for changes in rules.txt
+        id: check_changes
+        run: |
+          if git diff HEAD^ HEAD -- rules.txt | grep -q .; then
+            echo "rules_changed=true" >> $GITHUB_ENV
+            echo "Changes in rules.txt"
           else
-            echo "No changes to commit"
+            echo "rules_changed=false" >> $GITHUB_ENV
+            echo "No changes in rules.txt"
           fi
+
       - name: Notify Telegram about changes
+        if: env.rules_changed == 'true'
         run: |
           TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} \
           TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }} \
