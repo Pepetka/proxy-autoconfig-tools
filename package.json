@@ -3,7 +3,8 @@
   "module": "generate.ts",
   "type": "module",
   "scripts": {
-    "generate": "bun run generate.ts"
+    "generate": "bun run generate.ts",
+    "notify": "bun run notify.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
