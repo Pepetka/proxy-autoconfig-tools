@@ -1,4 +1,5 @@
 var __BLOCKEDSITES__ = [
+    "*.ua",
     "*.10minutemail.com",
     "*.10minutemail.net",
     "*.15min.lt",
@@ -484,7 +485,6 @@ var __BLOCKEDSITES__ = [
     "*.wonderzine.com",
     "*.wplocker.com",
     "*.x.com",
-    "*.x.ai",
     "*.yande.re",
     "*.yaoilib.me",
     "*.yle.fi",
