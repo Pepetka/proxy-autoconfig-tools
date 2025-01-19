@@ -26,6 +26,24 @@ jobs:
       - name: Generate files
         run: bun run generate
 
+      - name: Check for changes in rules.txt
+        id: check_changes
+        run: |
+          if git diff HEAD^ HEAD -- rules.txt | grep -q .; then
+            echo "rules_changed=true" >> $GITHUB_ENV
+            echo "Changes in rules.txt"
+          else
+            echo "rules_changed=false" >> $GITHUB_ENV
+            echo "No changes in rules.txt"
+          fi
+
+      - name: Notify Telegram about changes
+        if: env.rules_changed == 'true'
+        run: |
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} \
+          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }} \
+          bun run notify
+
       - name: Check for changes in output/
         id: check_output
         run: |
@@ -45,21 +63,3 @@ jobs:
           git config --global user.email "actions@github.com"
           git commit -m "Auto-generate GFW, PAC and ACL files"
           git push
-
-      - name: Check for changes in rules.txt
-        id: check_changes
-        run: |
-          if git diff HEAD^ HEAD -- rules.txt | grep -q .; then
-            echo "rules_changed=true" >> $GITHUB_ENV
-            echo "Changes in rules.txt"
-          else
-            echo "rules_changed=false" >> $GITHUB_ENV
-            echo "No changes in rules.txt"
-          fi
-
-      - name: Notify Telegram about changes
-        if: env.rules_changed == 'true'
-        run: |
-          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} \
-          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }} \
-          bun run notify
