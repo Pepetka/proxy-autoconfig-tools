@@ -1,7 +1,6 @@
 [bypass_all]
 
 [proxy_list]
-(?:^|\.)*\.ua$
 (?:^|\.)10minutemail\.com$
 (?:^|\.)10minutemail\.net$
 (?:^|\.)15min\.lt$
@@ -487,6 +486,7 @@
 (?:^|\.)wonderzine\.com$
 (?:^|\.)wplocker\.com$
 (?:^|\.)x\.com$
+(?:^|\.)x\.ai$
 (?:^|\.)yande\.re$
 (?:^|\.)yaoilib\.me$
 (?:^|\.)yle\.fi$
