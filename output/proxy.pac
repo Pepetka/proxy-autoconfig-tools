@@ -79,6 +79,7 @@ var __BLOCKEDSITES__ = [
     "*.cnews.fr",
     "*.coda.io",
     "*.codacontent.io",
+    "*.codeium.com",
     "*.colta.ru",
     "*.compromat.group",
     "*.compromat01.group",
