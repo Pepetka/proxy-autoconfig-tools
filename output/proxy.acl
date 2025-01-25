@@ -1,10 +1,6 @@
 [bypass_all]
 
 [proxy_list]
-(?:^|\.)*\.bbc\.co\.uk$
-(?:^|\.)*\.bbci\.co\.uk$
-(?:^|\.)*\.clients6\.google\.com$
-(?:^|\.)*\.newsru\.co\.il$
 (?:^|\.)10minutemail\.com$
 (?:^|\.)10minutemail\.net$
 (?:^|\.)15min\.lt$
@@ -56,7 +52,9 @@
 (?:^|\.)backmarket\.com$
 (?:^|\.)bard\.google\.com$
 (?:^|\.)barentsobserver\.co$
+(?:^|\.)bbc\.co\.uk$
 (?:^|\.)bbc\.com$
+(?:^|\.)bbci\.co\.uk$
 (?:^|\.)bellingcat\.com$
 (?:^|\.)belsat\.eu$
 (?:^|\.)belsat\.pl$
@@ -79,6 +77,7 @@
 (?:^|\.)cherta\.media$
 (?:^|\.)chess\.com$
 (?:^|\.)claude\.ai$
+(?:^|\.)clients6\.google\.com$
 (?:^|\.)cnews\.fr$
 (?:^|\.)coda\.io$
 (?:^|\.)codacontent\.io$
@@ -158,6 +157,7 @@
 (?:^|\.)euronews\.com$
 (?:^|\.)euroradio\.fm$
 (?:^|\.)eutrp\.eu$
+(?:^|\.)example\.com$
 (?:^|\.)exler\.ru$
 (?:^|\.)expres\.online$
 (?:^|\.)expresso\.pt$
@@ -289,6 +289,7 @@
 (?:^|\.)neputin\.org$
 (?:^|\.)netflix\.com$
 (?:^|\.)news\.google\.com$
+(?:^|\.)newsru\.co\.il$
 (?:^|\.)newsru\.com$
 (?:^|\.)newtimes\.ru$
 (?:^|\.)nhentai\.net$
