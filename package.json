@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "generate": "bun run generate.ts",
-    "notify": "bun run notify.ts"
+    "notify": "bun run notify.ts",
+    "add-domains": "bun manageRules.ts add",
+    "remove-domains": "bun manageRules.ts remove"
   },
   "devDependencies": {
     "@types/bun": "latest"

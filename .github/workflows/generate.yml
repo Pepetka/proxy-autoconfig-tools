@@ -1,4 +1,4 @@
-name: Generate GFW, PAC and ACL
+name: Generate GFW, PAC, ACL and CONF
 
 on:
   push:
