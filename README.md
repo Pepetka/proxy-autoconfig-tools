@@ -1,3 +1,4 @@
+
 # Proxy AutoConfig Tools
 
 Этот репозиторий содержит инструменты для автоматической генерации конфигурационных файлов (PAC, ACL, GFW и CONF) для использования с прокси-серверами.
@@ -7,14 +8,17 @@
 ## Использование
 
 ### Генерируемые конфигурационные файлы
-- **PAC (Proxy Auto Config)** — [Ссылка на файл PAC](output/proxy.pac)
-- **ACL (Access Control List)** — [Ссылка на файл ACL](output/proxy.acl)
-- **GFW (Great Firewall)** — [Ссылка на GFW List](output/gfw.txt)
-- **CONF** — [Ссылка на файл CONF](output/proxy.conf)
+- **PAC (Proxy Auto Config)**  
+[https://raw.githubusercontent.com/Pepetka/proxy-autoconfig-tools/refs/heads/main/output/proxy.pac](https://raw.githubusercontent.com/Pepetka/proxy-autoconfig-tools/refs/heads/main/output/proxy.pac)
+- **ACL (Access Control List)**  
+[https://raw.githubusercontent.com/Pepetka/proxy-autoconfig-tools/refs/heads/main/output/proxy.acl](https://raw.githubusercontent.com/Pepetka/proxy-autoconfig-tools/refs/heads/main/output/proxy.acl)
+- **GFW (Great Firewall)**  
+[https://raw.githubusercontent.com/Pepetka/proxy-autoconfig-tools/refs/heads/main/output/gfw.txt](https://raw.githubusercontent.com/Pepetka/proxy-autoconfig-tools/refs/heads/main/output/gfw.txt)
+- **CONF**  
+[https://raw.githubusercontent.com/Pepetka/proxy-autoconfig-tools/refs/heads/main/output/proxy.conf](https://raw.githubusercontent.com/Pepetka/proxy-autoconfig-tools/refs/heads/main/output/proxy.conf)
 
 ### Уведомления
-В Telegram-канале `ProxyAutoconfigTools` постятся сообщения о добавлении/удалении доменов:
-[Telegram-канал](https://t.me/+GHFJ8Ua-ctI3NjA6)
+В Telegram-канале [ProxyAutoconfigTools](https://t.me/+GHFJ8Ua-ctI3NjA6) постятся сообщения о добавлении/удалении доменов.
 
 ---
 
@@ -22,7 +26,7 @@
 
 ### Установка зависимостей
 
-Для работы с проектом требуется [Bun](https://bun.sh/). Установите зависимости:
+Для работы с проектом требуется [Bun](https://bun.sh/). Установка зависимостей:
 ```bash
 bun install
 ```
